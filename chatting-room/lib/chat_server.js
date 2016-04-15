@@ -83,7 +83,11 @@ function handleRoomJoining(socket){
 }
 
 function handleClientDisconnection(socket){
-	
+	socket.on('disconnect',function(){
+		var nameIndex = namesUsed.indexOf(nickNames[socket.id]);
+		delete namesUsed[nameIndex];
+		delete nickNames[socket.id];
+	});
 }
 
 function handleMessageBroadcasting(socket){

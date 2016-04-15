@@ -55,7 +55,7 @@ var server = http.createServer(function(request,response){
 });
 
 var ipAddress = '192.168.2.4';
-server.listen(3000,ipAddress,function(){
+server.listen(3000,function(){
 	console.log("Server listening on port 3000.");
 });
 
