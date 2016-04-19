@@ -1,0 +1,87 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'nimble' ]
+2 info using npm@3.3.6
+3 info using node@v5.0.0
+4 verbose config Skipping project config: /Users/donnice/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData nimble
+9 silly fetchNamedPackageData nimble
+10 silly mapToRegistry name nimble
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry uri https://registry.npmjs.org/nimble
+14 verbose request uri https://registry.npmjs.org/nimble
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 10:55:17 AM
+17 verbose request id ed258f8dcddb2e6f
+18 verbose etag "5GD02N1WAXUZ9K5W9ZW3VQOG1"
+19 http request GET https://registry.npmjs.org/nimble
+20 http 304 https://registry.npmjs.org/nimble
+21 verbose headers { date: 'Tue, 19 Apr 2016 14:55:16 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   'cache-control': 'max-age=300',
+21 verbose headers   etag: '"5GD02N1WAXUZ9K5W9ZW3VQOG1"',
+21 verbose headers   age: '55',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-jfk1047-JFK',
+21 verbose headers   'x-cache': 'HIT',
+21 verbose headers   'x-cache-hits': '1',
+21 verbose headers   'x-timer': 'S1461077716.999235,VS0,VE0',
+21 verbose headers   vary: 'Accept-Encoding' }
+22 silly get cb [ 304,
+22 silly get   { date: 'Tue, 19 Apr 2016 14:55:16 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     'cache-control': 'max-age=300',
+22 silly get     etag: '"5GD02N1WAXUZ9K5W9ZW3VQOG1"',
+22 silly get     age: '55',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-jfk1047-JFK',
+22 silly get     'x-cache': 'HIT',
+22 silly get     'x-cache-hits': '1',
+22 silly get     'x-timer': 'S1461077716.999235,VS0,VE0',
+22 silly get     vary: 'Accept-Encoding' } ]
+23 verbose etag https://registry.npmjs.org/nimble from cache
+24 verbose get saving nimble to /Users/donnice/.npm/registry.npmjs.org/nimble/.cache.json
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly rollbackFailedOptional Starting
+38 silly rollbackFailedOptional Finishing
+39 silly runTopLevelLifecycles Starting
+40 silly runTopLevelLifecycles Finishing
+41 silly install printInstalled
+42 verbose stack Error: Refusing to install nimble as a dependency of itself
+42 verbose stack     at checkSelf (/usr/local/lib/node_modules/npm/lib/install/validate-args.js:40:14)
+42 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+42 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+42 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+42 verbose stack     at /usr/local/lib/node_modules/npm/lib/install/validate-args.js:15:5
+42 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
+42 verbose stack     at Array.forEach (native)
+42 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
+42 verbose stack     at Array.forEach (native)
+42 verbose stack     at asyncMap (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:51:8)
+43 verbose cwd /Users/donnice/Documents/Cheating/learnNode
+44 error Darwin 15.4.0
+45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "nimble"
+46 error node v5.0.0
+47 error npm  v3.3.6
+48 error code ENOSELF
+49 error Refusing to install nimble as a dependency of itself
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
