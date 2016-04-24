@@ -3,7 +3,6 @@
  */
 var http = require('http');
 var items = [];
-var formidable = require('formidable');
 
 var server = http.createServer(function(req,res){
 	if('/' == req.url){
@@ -47,29 +46,23 @@ function notFound(res){
 	res.end('404 Not Found');
 }
 
-function upload(req,res){
-	if(!isFormData(req)){
-		res.statusCode = 400;
-		res.end('Bad Request');
-		return;
-	}
-	
-	var form = new formidable.IncomingForm();
-	
-	form.on('field',function(field,value){
-		console.log(field);
-		console.log(value);
+function badRequest(res){
+	res.statusCode = 400;
+	res.setHeader('Content-Type','text/plain');
+	res.end('400 Bad Request');
+}
+
+var qs = require('querystring');
+
+function add(req,res){
+	var body = '';
+	req.setEncoding('utf8');
+	req.on('data',function(chunk){
+		body += chunk;
 	});
-	
-	form.on('file',function(name,file){
-		console.log(name);
-		console.log(file);
+	req.on('end',function(){
+		var obj = qs.parse(body);
+		items.push(obj.item);
+		show(res);
 	});
-	
-	form.on('end',function(){
-		res.end('upload complete!');
-	});
-	
-	form.parse(req);
-	
 }
