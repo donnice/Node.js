@@ -41,6 +41,12 @@ function show(res){
 	res.end(html);//p110
 }
 
+function notFound(res){
+	res.statusCode = 404;
+	res.setHeader('Content-Type','text/plain');
+	res.end('404 Not Found');
+}
+
 function upload(req,res){
 	if(!isFormData(req)){
 		res.statusCode = 400;
@@ -50,6 +56,19 @@ function upload(req,res){
 	
 	var form = new formidable.IncomingForm();
 	
+	form.on('field',function(field,value){
+		console.log(field);
+		console.log(value);
+	});
+	
+	form.on('file',function(name,file){
+		console.log(name);
+		console.log(file);
+	});
+	
+	form.on('end',function(){
+		res.end('upload complete!');
+	});
 	
 	form.parse(req);
 	
