@@ -3,6 +3,7 @@
  */
 var http = require('http');
 var items = [];
+var formidable = require('formidable');
 
 var server = http.createServer(function(req,res){
 	if('/' == req.url){
@@ -38,4 +39,18 @@ function show(res){
 	res.setHeader('Content-Type','text/html');
 	res.setHeader('Content-Length',Buffer.byteLength(html));
 	res.end(html);//p110
+}
+
+function upload(req,res){
+	if(!isFormData(req)){
+		res.statusCode = 400;
+		res.end('Bad Request');
+		return;
+	}
+	
+	var form = new formidable.IncomingForm();
+	
+	
+	form.parse(req);
+	
 }
