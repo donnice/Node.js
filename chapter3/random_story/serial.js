@@ -16,6 +16,13 @@ function checkForRSSFile(){
 
 function readRSSFile(configFIlename){
 	fs.readFile(configFilename,function(err,feedList){
+		if(err) return next(err);
 		
-	})
+		feedList = feedList
+					.toString()
+					.replace(/^\s+|\s+$/g, '')
+					.split("\n");
+		var random = Math.floor(Math.random()*feedList.length);
+		next(null,feedList[random]);
+	}); // page 84
 }
