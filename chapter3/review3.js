@@ -8,3 +8,8 @@ exports.canadianToUS = function(canadian) {
 	return roundTwoDecimals(canadian*canadianDollar);
 }
 
+exports.USToCanadian = function(us) {
+	return roundTwoDecimals(us/canadianDollar);
+}
+
+// require is one of the few synchronous I/O operations available in Node.
