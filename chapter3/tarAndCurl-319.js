@@ -23,7 +23,7 @@ flow.series([
     		'tar cvf node_distros.tar ./tmp/0.4.6.tgz ./tmp/0.4.7.tgz',
     		function(error,stdout,stderr){
     			console.log('All done!');
-    			callback();
+    			callback();	// test
     		}
     	);
     }
