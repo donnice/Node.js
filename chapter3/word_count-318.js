@@ -1,3 +1,4 @@
+// Each file read and subsequent word count is done in parallel.
 var fs = require('fs');
 var completedTasks = 0;
 var tasks = [];
